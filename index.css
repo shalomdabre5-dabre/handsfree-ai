@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-navy-950 text-slate-100 font-sans antialiased;
+  background-image:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(139, 92, 246, 0.22), transparent 60%),
+    radial-gradient(50rem 35rem at -10% 10%, rgba(34, 211, 238, 0.14), transparent 60%);
+  background-attachment: fixed;
+}
+
+.glass {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold
+    transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+    focus-visible:outline-cyan-300 disabled:cursor-not-allowed disabled:opacity-40;
+}
+.btn-primary { @apply btn bg-gradient-to-r from-violet-500 to-cyan-400 text-navy-950 hover:brightness-110; }
+.btn-ghost { @apply btn border border-white/15 bg-white/5 hover:bg-white/10; }
+.btn-danger { @apply btn bg-red-500 text-white hover:bg-red-400; }
+
+/* Element currently under the head-tracked pointer */
+.hf-hover { outline: 3px solid #22d3ee !important; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
